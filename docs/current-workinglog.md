@@ -1,5 +1,7 @@
-# camps
+# Camp
 
-## problems
+## Need to add
 
-- need to send the community slug to the components campfeed
+- [ ] slug to CampFeed.
+
+# AppLayout
