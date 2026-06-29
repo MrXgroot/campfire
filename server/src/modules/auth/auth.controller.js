@@ -3,6 +3,7 @@ import HttpResponse from "../../shared/response/HttpResponse.js";
 
 class AuthController {
   async register(req, res, next) {
+    console.log("this is called");
     try {
       console.log(req.body);
       const result = await authService.register(req.body);

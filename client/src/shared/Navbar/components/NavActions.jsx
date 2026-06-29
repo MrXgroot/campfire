@@ -27,14 +27,14 @@ export function NotificationsAction() {
   );
 }
 
-export function CreatePostAction() {
+export function CreateCommunityAction() {
   return (
     <Link
-      to="/submit"
+      to="/login"
       className="hidden md:flex items-center gap-1.5 bg-[#d7dadc] hover:bg-white text-[#1a1a1b] text-xs font-bold px-4 py-1.5 rounded-full transition-colors ml-1"
     >
       <Plus className="w-4 h-4 stroke-[3]" />
-      <span>Create Post</span>
+      <span>Create Community</span>
     </Link>
   );
 }
