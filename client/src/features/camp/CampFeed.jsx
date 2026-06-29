@@ -7,6 +7,8 @@ import { mockCamps } from "../../mocks/camps.mock";
 import { useCampQuery } from "./hook/queries/useCampQuery";
 
 export default function CampFeed() {
+  //camp feed needs to send the what needto bee showne
+  //need tot send the id or slug
   const { data, isPending, isError, error, refetch } = useCampQuery();
 
   const camps = data?.data?.camps ?? mockCamps;

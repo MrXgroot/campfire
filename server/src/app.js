@@ -6,7 +6,7 @@ import env from "./config/env.js";
 
 import authRoutes from "./modules/auth/auth.routes.js";
 import campRoutes from "./modules/camp/camp.routes.js";
-
+import communityRoutes from "./modules/community/community.routes.js";
 const app = express();
 
 app.use(
@@ -22,5 +22,5 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/camps", campRoutes);
-
+app.use("/api/community", communityRoutes);
 export default app;
