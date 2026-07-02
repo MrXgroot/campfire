@@ -1,4 +1,4 @@
-import communityService from "./community.service.js";
+import * as communityService from "./community.service.js";
 import HttpResponse from "../../shared/response/HttpResponse.js";
 
 class CommunityController {

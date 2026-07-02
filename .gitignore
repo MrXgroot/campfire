@@ -68,3 +68,6 @@ Thumbs.db
 # TypeScript
 # ==========================
 *.tsbuildinfo
+
+docs/blog/
+log.txt

@@ -1,5 +1,9 @@
 import axios from "axios";
-
+import {
+  getAccessToken,
+  setAccessToken,
+  removeAccessToken,
+} from "../shared/lib/token";
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true,
@@ -14,18 +18,15 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    // Example:
-    // const token = localStorage.getItem("accessToken");
-    //
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`;
-    // }
+    const accessToken = getAccessToken();
+    console.log(accessToken);
+    if (accessToken) {
+      config.headers.Authorization = `Bearer ${accessToken}`;
+    }
 
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  },
+  (error) => Promise.reject(error),
 );
 
 //==============================
@@ -34,17 +35,20 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => {
+    console.log(response);
+    const accessToken = response.data?.data?.accessToken;
+    if (accessToken) setAccessToken(accessToken);
+
     return response;
   },
-  async (error) => {
+  (error) => {
     const { response } = error;
 
     switch (response?.status) {
       case 401:
-        // TODO:
-        // Refresh token
-        // Logout user
-        // Redirect to login
+        removeAccessToken();
+
+        window.location.href = "/login";
         break;
 
       case 403:

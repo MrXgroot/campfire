@@ -8,6 +8,8 @@ import NotFound from "../pages/NotFound";
 import AuthPage from "../pages/AuthPage";
 import LoginPage from "../pages/auth/LoginPage";
 import RegisterPage from "../pages/auth/RegisterPage";
+import CreateCommunity from "../pages/community/CreateCommunityPage";
+import ProtectedRoute from "./ProtectedRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,11 +26,22 @@ const router = createBrowserRouter([
         element: <CommunityPage />,
       },
       {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: "communities/create",
+            element: <CreateCommunity />,
+          },
+        ],
+      },
+
+      {
         path: "*",
         element: <NotFound />,
       },
     ],
   },
+
   { path: "/login", element: <LoginPage /> },
   { path: "/register", element: <RegisterPage /> },
 ]);

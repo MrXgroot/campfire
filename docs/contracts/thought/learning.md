@@ -22,3 +22,12 @@ cant deep orchaestrate like the navbar also includes the searchbar and i cant do
 I will move on with clean Navbar compnent no callback attributes each children look out for their own reponsibilites at long term it would be help full
 
 > when responsibilites are independent then so does the subcomponents
+
+## how would i handle the navbar now
+
+what does navbar requires
+logo searchbar and createButton profile
+thats all there is no business logic its just things
+
+**searchbar** what about searchbar what are the requirement of search bar it needs comlete new page maybe
+zustand would handle the searchbar states and hooks are used to get that can also use the controller to further orchaestrate

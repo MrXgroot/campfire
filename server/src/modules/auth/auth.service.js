@@ -37,8 +37,33 @@ class AuthService {
     };
   }
 
-  async login(credentials) {}
+  async login(credentials) {
+    const { email, password } = credentials;
 
+    const user = await authRepository.findByEmail(email);
+
+    if (!user) {
+      throw new UnauthorizedError("Invalid email or password.");
+    }
+
+    const isPasswordValid = await PasswordService.compare(
+      password,
+      user.password,
+    );
+
+    if (!isPasswordValid) {
+      throw new UnauthorizedError("Invalid email or password.");
+    }
+
+    const accessToken = JwtService.generateAccessToken({
+      userId: user._id,
+    });
+
+    return {
+      user,
+      accessToken,
+    };
+  }
   async me(userId) {}
 
   async logout() {}

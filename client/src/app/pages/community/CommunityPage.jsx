@@ -1,10 +1,9 @@
 import React from "react";
-import CommunityHero from "../../../features/community/components/Hero";
-import CommunityToolbar from "../../../features/community/components/Toolbar";
-import CommunitySidebar from "../../../features/community/components/Sidebar";
 import CampFeed from "../../../features/camp/CampFeed";
 import { mockCommunity } from "../../../mocks/community.mock";
-
+import CommunityHero from "../../../features/community/CommunityDetails/components/Hero";
+import CommunitySidebar from "../../../features/community/CommunityDetails/components/Sidebar";
+import CommunityToolbar from "../../../features/community/CommunityDetails/components/Toolbar";
 export default function CommunityPage() {
   const community = mockCommunity;
 
