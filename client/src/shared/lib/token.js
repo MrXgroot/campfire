@@ -2,7 +2,6 @@ const ACCESS_TOKEN_KEY = "accessToken";
 
 export function getAccessToken() {
   const token = localStorage.getItem(ACCESS_TOKEN_KEY);
-  console.log(token);
   return localStorage.getItem(ACCESS_TOKEN_KEY);
 }
 

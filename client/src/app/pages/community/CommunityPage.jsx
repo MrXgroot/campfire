@@ -8,7 +8,7 @@ export default function CommunityPage() {
   const community = mockCommunity;
 
   return (
-    <div className="min-h-screen bg-[#030303] text-[#d7dadc] font-sans antialiased selection:bg-[#343536]">
+    <div className="min-h-screen  w-full bg-[#030303] text-[#d7dadc] font-sans antialiased selection:bg-[#343536]">
       {/* 1. Hero / Banner occupies full viewport width above columns */}
       <CommunityHero community={community} />
 

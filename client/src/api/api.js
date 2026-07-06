@@ -19,7 +19,6 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const accessToken = getAccessToken();
-    console.log(accessToken);
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
@@ -35,7 +34,6 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => {
-    console.log(response);
     const accessToken = response.data?.data?.accessToken;
     if (accessToken) setAccessToken(accessToken);
 

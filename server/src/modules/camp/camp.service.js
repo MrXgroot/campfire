@@ -49,7 +49,11 @@ class CampService {
     }
 
     return {
-      camp,
+      ...camp.toObject(),
+      author: camp.authorId,
+      community: camp.communityId,
+      authorId: undefined,
+      communityId: undefined,
     };
   }
 
@@ -57,7 +61,15 @@ class CampService {
     const camps = await campRepository.findAll({}, options);
 
     return {
-      camps,
+      camps: camps.map((camp) => ({
+        ...camp.toObject(),
+
+        author: camp.authorId,
+        community: camp.communityId,
+
+        authorId: undefined,
+        communityId: undefined,
+      })),
     };
   }
 

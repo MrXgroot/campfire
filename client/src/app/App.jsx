@@ -1,9 +1,5 @@
-import React from "react";
-import Homepage from "./pages/home/Homepage";
-import CommunityPage from "./pages/community/CommunityPage";
-import AppLayout from "./layouts/AppLayout";
 import { RouterProvider } from "react-router-dom";
-import router from "./router/router";
+import router from "./router/router-v2";
 const App = () => {
   return <RouterProvider router={router} />;
 };

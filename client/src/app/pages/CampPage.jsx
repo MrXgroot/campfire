@@ -1,7 +1,6 @@
-import React from "react";
-
+import CampViewer from "../../features/camp/CampViewer";
 const CampPage = () => {
-  return <div>CampPage</div>;
+  return <CampViewer />;
 };
 
 export default CampPage;

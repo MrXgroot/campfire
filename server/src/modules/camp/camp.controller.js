@@ -16,12 +16,13 @@ class CampController {
   }
 
   async getAll(req, res, next) {
-    console.log("calling");
     try {
       const result = await campService.getAll({
         limit: Number(req.query.limit),
         skip: Number(req.query.skip),
       });
+
+      console.log(result);
 
       return HttpResponse.ok(res, "Camps fetched successfully.", result);
     } catch (error) {
@@ -42,7 +43,6 @@ class CampController {
   async getBySlug(req, res, next) {
     try {
       const result = await campService.getBySlug(req.params.slug);
-
       return HttpResponse.ok(res, "Camp fetched successfully.", result);
     } catch (error) {
       next(error);

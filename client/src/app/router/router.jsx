@@ -10,6 +10,7 @@ import LoginPage from "../pages/auth/LoginPage";
 import RegisterPage from "../pages/auth/RegisterPage";
 import CreateCommunity from "../pages/community/CreateCommunityPage";
 import ProtectedRoute from "./ProtectedRoute";
+import CampPage from "../pages/CampPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "communities/:communitySlug",
         element: <CommunityPage />,
+      },
+      {
+        path: "communities/:communitySlug/camps/:campSlug",
+        element: <CampPage />,
       },
       {
         element: <ProtectedRoute />,
