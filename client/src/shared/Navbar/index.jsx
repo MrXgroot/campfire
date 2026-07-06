@@ -9,7 +9,7 @@ import {
   CreateCommunityAction,
 } from "./components/NavActions";
 
-import useAppLayoutStore from "../../app/layouts/AppLayout-v2/store/useAppLayoutStore";
+import useAppLayoutStore from "../../app/layouts/AppLayout/store/useAppLayoutStore";
 
 export default function GlobalNavbar() {
   const toggleSidebar = useAppLayoutStore((state) => state.toggleSidebar);
