@@ -8,10 +8,10 @@ import authRoutes from "./modules/auth/auth.routes.js";
 import campRoutes from "./modules/camp/camp.routes.js";
 import communityRoutes from "./modules/community/community.routes.js";
 const app = express();
-
+const allowedOrigins=["http://localhost:5173",env.CLIENT_URL].filter(Boolean)
 app.use(
   cors({
-    origin: env.CLIENT_URL,
+    origin: allowedOrigins,
     credentials: true,
   }),
 );
