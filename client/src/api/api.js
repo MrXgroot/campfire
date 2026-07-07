@@ -5,7 +5,7 @@ import {
   removeAccessToken,
 } from "../shared/lib/token";
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: "https://campfire-m2my.onrender.com",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
