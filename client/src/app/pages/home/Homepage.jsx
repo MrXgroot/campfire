@@ -1,7 +1,7 @@
 import React from "react";
 import CampFeed from "../../../features/camp/CampFeed";
-const Homepage = () => {
+const HomePage = () => {
   return <CampFeed />;
 };
 
-export default Homepage;
+export default HomePage;
