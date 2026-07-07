@@ -1,7 +1,7 @@
 import React from "react";
 import { Home, TrendingUp, Compass, Plus, X } from "lucide-react";
 
-import useAppLayoutStore from "../../app/layouts/AppLayout-v2/store/useAppLayoutStore";
+import useAppLayoutStore from "../../app/layouts/AppLayout/store/useAppLayoutStore";
 
 export default function LeftSidebar() {
   const { isSidebarOpen, closeSidebar } = useAppLayoutStore();
